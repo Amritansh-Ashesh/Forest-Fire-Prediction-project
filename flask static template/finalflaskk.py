@@ -1,17 +1,9 @@
 from flask import Flask, render_template, url_for
 
 app = Flask(__name__)
-
-#model=pickle.load(open('model.pkl','rb'))
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 @app.route('/')
-
-@app.route('/forest_fire')
-def forest_fire():
-    return render_template('forest_fire.html', title='homepage', status='')
-
-
 @app.route('/home')
 def home():
     return render_template('home.html',title='homepage',status='')
@@ -23,9 +15,11 @@ def about():
 @app.route('/predictor')
 def predictor():
     return render_template('predictor.html',title='Predictor',status='')
+
 @app.route('/forest_fire')
 def forest_fire():
-    return render_template('forest_fire.html', title='homepage', status='')
+    return render_template('forest_fire.html',title='forest_fire',status='')
+
 
 
 @app.route('/services')
